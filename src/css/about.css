@@ -1,0 +1,106 @@
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .2);
+  z-index: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+  width: 100%;
+  /* or any specific width */
+  height: 600px;
+
+  margin: 10rem 0;
+  overflow: auto;
+
+  color: black;
+  background-color: white;
+  opacity: 90%;
+  padding: 2rem 8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    margin: 4rem 0;
+  }
+}
+
+.about-header {
+  text-align: center;
+}
+
+.about-header h2 {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.about-header p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.about-summary {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1rem;
+  letter-spacing: 0.03rem;
+  margin-top: 3rem;
+}
+
+.about-skill {
+  margin: 4rem 0;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  font-weight: bold;
+  margin: 2rem 0;
+}
+
+.about-skill p {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1rem;
+  letter-spacing: 0.03rem;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+
+  .about {
+    padding: 2.5rem 4rem;
+  }
+
+  .about-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    margin-bottom: .5rem;
+  }
+
+  .about-summary {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+
+  .about-skill {
+    margin: 2.5rem 0;
+  }
+
+  .about-skill p {
+    font-size: 1rem;
+  }
+}
