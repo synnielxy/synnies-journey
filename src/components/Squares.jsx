@@ -3,13 +3,13 @@ import { useFrame } from '@react-three/fiber';
 import { Instances, Instance } from '@react-three/drei';
 import { MathUtils } from "three";
 
-export function FloatingSquare({ count = 80 }) {
+export function FloatingSquare({ count = 100 }) {
   const groupRef = useRef();
 
   // Randomize properties for each square
   const squares = useMemo(() => {
     return new Array(count).fill().map(() => ({
-      position: [Math.random() * 6 - 3, MathUtils.randFloatSpread(15) , Math.random() * 5 - 5],
+      position: [Math.random() * 6 - 3, MathUtils.randFloatSpread(12) - 3, Math.random() * 5 - 5],
       rotation: [Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI],
       scale: Math.random() * 0.5 + 0.5,
     }));
@@ -23,8 +23,8 @@ export function FloatingSquare({ count = 80 }) {
       }else if(mesh.position.x < 0) {
         mesh.position.x -= 0.01
       }
-      if (mesh.position.y > 15) {
-        mesh.position.y = 0;
+      if (mesh.position.y > 12) {
+        mesh.position.y = -3;
         mesh.position.x = Math.random() * 6 - 3;
       }
     });
