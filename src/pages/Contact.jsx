@@ -1,18 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const form = useRef();
+
   const [submitted, setSubmitted] = useState(false); // State to track submission status
   const [isFormValid, setIsFormValid] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true); // Update the submitted state to true
-    // Submit form logic here
+    setSubmitted(true); 
+    
+    emailjs.sendForm('service_zximd22', 'template_mem7zgh', form.current, 'gW0tISv1vnEGVuDu_')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   };
 
   const handleCloseMessage = () => {
@@ -46,16 +50,18 @@ export function Contact() {
           </div>
         </div>
         <div className="submit-form">
-          <form action="" onSubmit={handleSubmit} id="contactForm">
+          <form ref={form} action="" onSubmit={handleSubmit} id="contactForm">
             <div className="input-box">
-              <input type="text" className="input" required /><label htmlFor="">Your name</label>
+              <input type="text" className="input" name="user_name" required />
+              <label htmlFor="user_name">Your name</label>
             </div>
             <div className="input-box">
-              <input type="email" className="input" required /><label htmlFor="">Your email</label>
+              <input type="email" className="input" name="user_email" required />
+              <label htmlFor="user_email">Your email</label>
             </div>
             <div className="input-box">
-              <textarea name="" id="message" cols="30" rows="10" className="input" required></textarea>
-              <label htmlFor="">Your message</label>
+              <textarea name="message" id="message" cols="30" rows="10" className="input" required></textarea>
+              <label htmlFor="message">Your message</label>
             </div>
             <input type="submit" value="Send" className="btn-submit" />
           </form>

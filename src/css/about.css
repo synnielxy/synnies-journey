@@ -15,10 +15,10 @@
 .about {
   width: 100%;
   /* or any specific width */
-  height: 600px;
+  height: 620px;
 
   margin: 10rem 0;
-  overflow: auto;
+  overflow:hidden;
 
   color: black;
   background-color: white;
@@ -29,6 +29,7 @@
 @media screen and (max-width: 768px) {
   .about {
     margin: 4rem 0;
+    overflow:auto;
   }
 }
 

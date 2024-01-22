@@ -9,14 +9,16 @@ export function About() {
 
       <div className="about-summary">
         <p>
-          I majored in design and am currently working as a Front-end Developer.
-          At work, I mainly use React and Typescript.
-          For personal projects, I use Three.js, a WebGL library.
-          I’m interested in GLSL and am currently studying Blender.
+          I am a creative / front end developer 
+          with a Bachelor's degree in Computer Science and over a year of industry experience.
+          I am currently advancing my professional expertise by pursuing a Master's degree in Computer Science. 
+          My areas of interest include WebGL, GLSL, and I am currently learning Blender.
         </p>
         <p>
-          I love picture books and I want to express the feeling of picture books on the web.
-          I enjoy sport climbing.
+        My passion lies in expressing graphics through programming 
+        and exploring new interactive and immersive technologies. 
+        Outside of programming, 
+        I enjoy engaging in artistic endeavors like painting and photography.
         </p>
       </div>
 
