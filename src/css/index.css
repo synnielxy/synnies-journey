@@ -28,12 +28,30 @@ html {
   overflow-x: hidden;
 }
 
+a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  margin-right: 2.5rem;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  overflow: hidden;
 }
 
 .overlay--disable {
@@ -56,32 +74,54 @@ html {
 
 .intro {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  text-align: center;
   height: 100%;
 }
 
 .logo {
-  font-family: 'Nanum Myeongjo', serif;
-  font-weight: 800;
+  font-family: "Nanum Myeongjo", serif;
   color: white;
-  font-size: 3rem;
-  letter-spacing: 0.5rem;
   padding: 0;
   margin: 0;
-  transform: translateY(-50%);
   position: absolute;
   top: 50vh;
   animation: fadeUp 2.4s ease-in-out;
   transition: all 2s ease-in-out;
 }
 
+.intro h1 {
+  font-size: clamp(2.2rem, 2.2rem + 1vw, 9rem);
+  font-weight: 800;
+  letter-spacing: 0.5rem;
+  transform: translateY(-150%);
+}
+
+.intro h2 {
+  font-size: clamp(1.1rem, 1.1rem + 1vw, 4rem);
+  font-weight: 400;
+  transform: translateY(-50%);
+}
+
+.intro--disappear {
+  transition: all 1s ease-in-out; 
+  opacity: 0;
+}
+
 .intro--disappear .logo {
+  opacity: 0;
+}
+
+.logo-title {
+  opacity: 0;
+  font-family: "Nanum Myeongjo", serif;
+  color: white;
+  letter-spacing: 0.05rem;
+  position: absolute;
   top: 20px;
-  transform: scale(0.25);
   transform-origin: center top;
-  transition: all 1s ease-in-out;
 }
 
 .intro__scroll {
@@ -94,9 +134,14 @@ html {
   top: 10vh;
 }
 
-.intro--disappear .intro__scroll {
+.scroll-appear .intro__scroll {
   animation: fadeIn 1s ease-in-out 1.5s forwards;
 }
+
+.scroll-appear .logo-title {
+  animation: fadeIn 1s ease-in-out 1.5s forwards;
+}
+
 
 .overlay--scrolled .intro__scroll {
   animation: fadeOut 1s ease-in-out forwards;
@@ -128,9 +173,9 @@ html {
 }
 
 .explore {
-  padding: 1rem 2rem;
+  padding: 1rem 2rem ;
   border: none;
-  font-family: "DM Serif Display", serif;
+  font-family: "Nanum Myeongjo", serif;
   font-size: 1.25rem;
   letter-spacing: 0.25rem;
   color: #3b93b0;
@@ -138,7 +183,7 @@ html {
   border-radius: 32px;
   cursor: pointer;
   display: inline-block;
-  margin-top: 320px;
+  margin-top: 350px;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -180,13 +225,13 @@ html {
 
   display: flex;
   flex-direction: column;
-
+  z-index: 4;
   gap: var(--hamburger-gap);
   width: max-content;
   position: absolute;
   top: var(--hamburger-margin);
   right: var(--hamburger-margin);
-  z-index: 2;
+  
   cursor: pointer;
 }
 
@@ -242,13 +287,13 @@ html {
 }
 
 .sidebar {
+  z-index: 3;
   position: absolute;
   top: 0;
   left: 0;
   transform: translateY(-100%);
   transition: transform var(--animation-timing);
   padding: 0.5rem 1rem;
-  /* padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem); */
   background-color: var(--foreground);
   color: var(--background);
   min-width: 100vw;

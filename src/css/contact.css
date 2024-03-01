@@ -25,6 +25,12 @@
   opacity: 1;
 
   overflow: auto;
+
+  animation-name: fade-in;
+  animation-delay: 0.4s;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 }
 
 .item {

@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 0;
 
   display: flex;
@@ -18,18 +18,19 @@
   height: 620px;
 
   margin: 10rem 0;
-  overflow:hidden;
+  overflow: hidden;
 
   color: black;
   background-color: white;
-  opacity: 90%;
+  opacity: 100%;
   padding: 2rem 8rem;
+  animation: fadeIn 1.4s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
   .about {
     margin: 4rem 0;
-    overflow:auto;
+    overflow: auto;
   }
 }
 
@@ -38,33 +39,57 @@
 }
 
 .about-header h2 {
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: "Nanum Myeongjo", serif;
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: 0.25rem;
   margin-bottom: 1rem;
+
+  animation-name: fade-in;
+  animation-delay: 0.2s;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 }
 
 .about-header p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   margin-top: 0;
   margin-bottom: 2rem;
+
+  animation-name: fade-in;
+  animation-delay: 0.6s;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 }
 
 .about-summary {
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: "Nanum Myeongjo", serif;
   font-size: 1rem;
   letter-spacing: 0.03rem;
   margin-top: 3rem;
+
+  animation-name: fade-in;
+  animation-delay: 1.0s;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 }
 
 .about-skill {
   margin: 4rem 0;
+
+  animation-name: fade-in;
+  animation-delay: 1.4s;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 }
 
 .title {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   letter-spacing: 0.05rem;
   font-weight: bold;
@@ -72,7 +97,7 @@
 }
 
 .about-skill p {
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: "Nanum Myeongjo", serif;
   font-size: 1rem;
   letter-spacing: 0.03rem;
 }
@@ -80,7 +105,6 @@
 /* RESPONSIVE */
 
 @media screen and (max-width: 768px) {
-
   .about {
     padding: 2.5rem 4rem;
   }
@@ -89,7 +113,7 @@
     font-size: 2rem;
     font-weight: 800;
     letter-spacing: 0.1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   .about-summary {
@@ -103,5 +127,14 @@
 
   .about-skill p {
     font-size: 1rem;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

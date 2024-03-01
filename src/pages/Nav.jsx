@@ -1,14 +1,9 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { usePlay } from "../contexts/Play";
-
-import { Home } from "./Home";
-import { Contact } from "./Contact";
-import { About } from "./About";
 
 export const Nav = () => {
   const { play } = usePlay();
-  const [currentPage, setCurrentPage] = useState('home');
   const [isChecked, setIsChecked] = useState(false);
 
   return (
@@ -24,51 +19,55 @@ export const Nav = () => {
       section === 36 || 38 : textSections[7]
                              section / step
       */}
-      <Home />
-      {currentPage === 'about' && <About />}
-      {currentPage === 'contact' && <Contact />}
-      {
-        play && (<div className="hamburger-menu-container">
+      {play && (
+        <div className="hamburger-menu-container">
           <label htmlFor="checkbox" className="hamburger-menu">
-            <input type="checkbox" name="checkbox" id="checkbox"
+            <input
+              type="checkbox"
+              name="checkbox"
+              id="checkbox"
               checked={isChecked}
               onChange={() => setIsChecked(!isChecked)}
             />
           </label>
           <aside className="sidebar">
             <nav>
-              <div className="sidebar-item"
-                onClick={
-                  () => {
-                    setCurrentPage('home')
-                    setIsChecked(false); 
-                  }
-                }>
-                Home
+              <div
+                className="sidebar-item"
+                onClick={() => {
+                  setIsChecked(false);
+                }}
+              >
+                <Link to="/">Home</Link>
               </div>
-              <div className="sidebar-item"
-                onClick={
-                  () => {
-                    setCurrentPage('about')
-                    setIsChecked(false); 
-                  }
-                }>
-                About
+              <div
+                className="sidebar-item"
+                onClick={() => {
+                  setIsChecked(false);
+                }}
+              >
+                <Link to="/about">About</Link>
               </div>
-              <div className="sidebar-item"
-                onClick={
-                  () => {
-                    setCurrentPage('contact')
-                    setIsChecked(false); 
-                  }
-                }>
-                Contact
+              <div
+                className="sidebar-item"
+                onClick={() => {
+                  setIsChecked(false);
+                }}
+              >
+                <Link to="/dev">Dev</Link>
+              </div>
+              <div
+                className="sidebar-item"
+                onClick={() => {
+                  setIsChecked(false);
+                }}
+              >
+                <Link to="/contact">Contact</Link>
               </div>
             </nav>
           </aside>
         </div>
-        )
-      }
+      )}
     </div>
   );
-}
+};
