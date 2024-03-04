@@ -14,26 +14,15 @@
 
 .about {
   width: 100%;
-  /* or any specific width */
-  height: 620px;
-
-  margin: 10rem 0;
-  overflow: hidden;
+  height: 70%;
+  overflow: auto;
 
   color: black;
   background-color: white;
   opacity: 100%;
-  padding: 2rem 8rem;
+  padding: 1rem 8rem;
   animation: fadeIn 1.4s ease-in-out;
 }
-
-@media screen and (max-width: 768px) {
-  .about {
-    margin: 4rem 0;
-    overflow: auto;
-  }
-}
-
 .about-header {
   text-align: center;
 }
@@ -106,7 +95,10 @@
 
 @media screen and (max-width: 768px) {
   .about {
-    padding: 2.5rem 4rem;
+    padding: 2.5rem 1rem;
+    height: 80%;
+    overflow: auto;
+
   }
 
   .about-header h2 {
